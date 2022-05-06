@@ -6,8 +6,13 @@ name = "pypi"
 [packages]
 django = "~=3.2"
 djangorestframework = "~=3.12"
+cryptography = "*"
 
 [dev-packages]
+flake8 = "*"
+black = "*"
+isort = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.9"
