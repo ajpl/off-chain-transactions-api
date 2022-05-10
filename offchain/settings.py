@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "rest_framework_simplejwt",
     "api",
 ]
 
@@ -129,3 +130,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Balance fernet key
 
 BALANCE_KEY = "iyatDW5HK1rkYDhJSzIag8b0gZUmDThxCJI6JO33Bg8="
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    )
+}

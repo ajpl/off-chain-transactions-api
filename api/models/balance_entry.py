@@ -13,6 +13,9 @@ class BalanceEntry(models.Model):
     tx_type = models.IntegerField(
         choices=TransactionType.choices, default=TransactionType.AIRDROP
     )
+    to_balance = models.ForeignKey(
+        Balance, null=True, on_delete=models.RESTRICT, related_name="to_balance"
+    )
     tx_amount = models.DecimalField(max_digits=18, decimal_places=8, default=0)
     amount_before_tx = models.DecimalField(max_digits=18, decimal_places=8, default=0)
     amount_after_tx = models.DecimalField(max_digits=18, decimal_places=8, default=0)

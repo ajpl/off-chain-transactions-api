@@ -6,15 +6,16 @@ name = "pypi"
 [packages]
 django = "~=3.2"
 djangorestframework = "~=3.12"
+djangorestframework-simplejwt = "*"
 cryptography = "*"
 
 [dev-packages]
 flake8 = "*"
 black = "*"
-isort = "*"
 pytest = "*"
 pytest-django = "*"
 freezegun = "*"
+factory-boy = "*"
 
 [requires]
 python_version = "3.9"
