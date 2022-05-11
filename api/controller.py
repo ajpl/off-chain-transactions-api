@@ -26,7 +26,7 @@ def airdrop(id: int, amount: Decimal) -> BalanceEntry:
     return balance_entry
 
 
-def burn(id: int, amount: Decimal) -> Balance:
+def burn(id: int, amount: Decimal) -> BalanceEntry:
     with transaction.atomic():
         balance = Balance.objects.select_for_update().get(id=id)
         if balance.amount < amount:
@@ -46,7 +46,7 @@ def burn(id: int, amount: Decimal) -> Balance:
     return balance_entry
 
 
-def p2p(from_id: int, to_id: int, amount: Decimal) -> Balance:
+def p2p(from_id: int, to_id: int, amount: Decimal) -> BalanceEntry:
     with transaction.atomic():
         from_balance = Balance.objects.select_for_update().get(id=from_id)
         if from_balance.amount < amount:
